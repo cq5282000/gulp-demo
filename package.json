@@ -1,0 +1,22 @@
+{
+  "name": "gulp-demo",
+  "version": "1.0.0",
+  "description": "## 2018年5月28日",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cq5282000/gulp-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cq5282000/gulp-demo/issues"
+  },
+  "homepage": "https://github.com/cq5282000/gulp-demo#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
