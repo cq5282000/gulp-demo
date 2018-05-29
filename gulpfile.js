@@ -18,6 +18,14 @@ gulp.task('default',['three'], function() {
     console.log('default');
 });
 
-gulp.src(['src/js/*.js', 'src/html/*.html'], { base:'src' })
+gulp.task('lint', () => {
+
+})
+
+// gulp.src(['src/js/*.js', 'src/html/*.html'], { base:'src' })
+//     // .pipe(minify())
+// .pipe(gulp.dest('build'));
+
+gulp.src(['!node_modules/**'])
     // .pipe(minify())
 .pipe(gulp.dest('build'));

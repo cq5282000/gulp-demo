@@ -31,6 +31,8 @@ webpack的核心就是模块化的组织，模块化的依赖，模块化的打�
 
 ## 2018年5月29日
 
+### gulp基础api
+
 - gulp.src(globs[, options]),输出所有符合匹配模式的（glob）或者匹配模式的数组,将返回一个Vinyl files 的 stream 它可以被 piped 到别的插件中；
 
 - gulp.dest(path[, options])能被pipe进来，并且将会写文件，并且重新输出所有数据，因此你可以将它pipe到多个文件夹，如果文件夹不存在，会自动创建
@@ -38,5 +40,11 @@ webpack的核心就是模块化的组织，模块化的依赖，模块化的打�
 - gulp.task(name[,deps], fn)定义一个使用Orchestrator实现的任务，task将以最大的并发数执行，也就是说task会以最大并发数执行并且不做任何等待，创建序列化的task，并以特定顺序执行，需要做两件事，给出一个提示，来告知task什么时候执行完毕，再给出另外一个提示，来告知task依赖另一个task完成
 
 - gulp.watch(glob[,opts], tasks) && gulp.watch(glob[,opts,cb])监听文件，并且可以在文件发生改动的时候做一些事情，他会返回一个EventEmitter来发射（change）事，接收到change事件后，可以执行多个传入的task也可以执行回调
+
+### 起步 && 基础概念
+
+- gulpfile.js中必须定义名为‘default’默认task
+- 
+
 
 
