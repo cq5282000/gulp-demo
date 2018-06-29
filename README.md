@@ -56,17 +56,32 @@ webpack的核心就是模块化的组织，模块化的依赖，模块化的打�
 
 ### glob语法
 
- 不但适用于文件处理的模式匹配，而且适用于Linux指令
+ 不但适用于文件处理的模式匹配，而且适用于Linux指令，是gulp的api的文件匹配核心
 
 #### 基础语法
 
 - * 匹配任意数量的字符，但不匹配／，
+
 - ？ 匹配单个字符，但不匹配／
+
 - ** 匹配任意数量的字符，包括／，只要他是路由中的唯一的一部分
-- [...]匹配一个范围内的字符串,'src/**/ind[a-z][a-z].js',匹配到的是前三位为ind，后两位为a-z范围内字母的所有js文件
-- *(pattern|pattern|pattern)匹配模型中的单个或者多个组合，例如'js/**/*(a|b|c).js', a,b,c分别代表要匹配到的文件名
-- ?(pattern|pattern|pattern)匹配不包括模型的所有文件,和*的区别在于必须完全匹配，不能自由组合
-- !(pattern|pattern|pattern)匹配不包含任何模型，需注意的是，不等于!(*(pattern|pattern|pattern))
+
+- [...]匹配一个范围内的字符,只能是匹配一个字符,'src/**/ind[a-z][a-z].js',匹配到的是前三位为ind，后两位为a-z范围内字母的所有js文件
+
+- *(pattern|pattern|pattern)匹配模型中的0个或者多个组合，例如'js/**/*(a|b|c).js', a,b,c分别代表要匹配到的文件名
+
+- ?(pattern|pattern|pattern)匹配多个模型中的0个或者1个,和*的区别在于必须完全匹配，不能自由组合
+
+- !(pattern|pattern|pattern)匹配不包含任何模型，需注意的是，不等于!(*(pattern|pattern|pattern)),取反的模型的必须完全匹配
+
+- +(pattern|pattern|pattern)匹配多个模型中的一个或者多个，必须有一个，为空不匹配
+
+- @(pattern|pat*|pat?erN)匹配多个模型中的任意一个
+
+- .开头的文件不会被匹配
+
+- 和shell不同的是当没有任何文件匹配到时，返回的是[],而shell返回的匹配模式本身，可设置{nonull:true}来使得表现行为本身相同
+
 
 
 
