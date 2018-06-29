@@ -41,10 +41,32 @@ webpack的核心就是模块化的组织，模块化的依赖，模块化的打�
 
 - gulp.watch(glob[,opts], tasks) && gulp.watch(glob[,opts,cb])监听文件，并且可以在文件发生改动的时候做一些事情，他会返回一个EventEmitter来发射（change）事，接收到change事件后，可以执行多个传入的task也可以执行回调
 
-### 起步 && 基础概念
+### 注意点
 
 - gulpfile.js中必须定义名为‘default’默认task
-- 
+
+## 2018年5月30日
+
+### 入门 && 基础
+
+- 整合stream来处理错误
+
+
+## 2018年6月25日
+
+### glob语法
+
+ 不但适用于文件处理的模式匹配，而且适用于Linux指令
+
+#### 基础语法
+
+- * 匹配任意数量的字符，但不匹配／，
+- ？ 匹配单个字符，但不匹配／
+- ** 匹配任意数量的字符，包括／，只要他是路由中的唯一的一部分
+- [...]匹配一个范围内的字符串,'src/**/ind[a-z][a-z].js',匹配到的是前三位为ind，后两位为a-z范围内字母的所有js文件
+- *(pattern|pattern|pattern)匹配模型中的单个或者多个组合，例如'js/**/*(a|b|c).js', a,b,c分别代表要匹配到的文件名
+- ?(pattern|pattern|pattern)匹配不包括模型的所有文件,和*的区别在于必须完全匹配，不能自由组合
+- !(pattern|pattern|pattern)匹配不包含任何模型，需注意的是，不等于!(*(pattern|pattern|pattern))
 
 
 
