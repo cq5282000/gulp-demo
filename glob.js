@@ -18,5 +18,15 @@ glob('src/**/@(1|index).js', options, function(er, files) {
     console.log(files);
 });
 
-const mg = new Glob('src/**/*.js');
+const mg = new Glob('src/**/*.js', {});
+mg.on('match', function(files) {
+    console.log('match', files);
+});
+mg.on('end', function(files) {
+    console.log('end', files);
+});
+mg.on('abort', function() {
+    console.log('abort');
+});
+
 
